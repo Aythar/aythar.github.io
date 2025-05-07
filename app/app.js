@@ -2,16 +2,12 @@ document.getElementById('app').innerHTML = `
   <button onclick="startGame()">ابدأ اللعبة</button>
 `;
 
-function startGame() {
-  alert("تم بدء لعبة الشطرنج!");
-  initGame();
-}
-
 let game; // لتخزين حالة اللعبة
 
 // تهيئة اللعبة
-function initGame() {
-  game = new Chess(); // استخدام مكتبة chess.js
+function startGame() {
+  alert("تم بدء لعبة الشطرنج!");
+  game = new Chess();
   renderBoard();
 }
 
@@ -38,7 +34,7 @@ function playerMove(from, to) {
   }
 }
 
-// نقلة الذكاء الاصطناعي (باستخدام مكتبة Stockfish أو Chess.js AI)
+// نقلة الذكاء الاصطناعي
 function aiMove() {
   const bestMove = game.ugly_move(game.analysedMoves());
   game.ugly_move(bestMove);
